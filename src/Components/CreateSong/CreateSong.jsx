@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const CreateSong = (props) => {
-    const [title, setTitle] = useState('')
+    const [title, setTitle] = useState(0)
     const [artist, setArtist] = useState('')
     const [album, setAlbum] = useState('')
     const [releaseDate, setReleaseDate] = useState('')
@@ -17,9 +17,11 @@ const CreateSong = (props) => {
             genre: genre,
             likes: 0
         }
+        console.log(newSong)
         props.createNewSong(newSong)
 
     }
+
     return (
         <form onSubmit={handleSubmit}>
             <div>
@@ -42,7 +44,7 @@ const CreateSong = (props) => {
                 <label>Genre: </label>
                 <input type='text' onChange={(event) => setGenre(event.target.value)} />
             </div>
-            <button>Create</button>
+            <button>Create</button><button type='reset'>Reset</button>
         </form>
     );
 
