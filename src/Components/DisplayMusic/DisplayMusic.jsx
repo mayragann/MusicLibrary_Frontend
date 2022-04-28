@@ -1,8 +1,10 @@
+import "./DisplayMusic.css"
+
 const DisplayMusic = (props) => {
 
     return (
-        <table className="table">
-            <thead>
+        <table className="table table-striped">
+            <thead className="dark-header">
                 <tr>
                     <th>Title</th>
                     <th>Artist</th>
@@ -13,9 +15,12 @@ const DisplayMusic = (props) => {
                 </tr>
             </thead>
             <tbody>
+            <th scope="row"></th>
                 {props.parentSongs.map((song) => {
                     return (
-                        <tr key={song.id}>
+                        
+                        <tr  key={song.id}>
+
                             <td>{song.title}</td>
                             <td>{song.artist}</td>
                             <td>{song.album}</td>

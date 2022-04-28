@@ -1,0 +1,20 @@
+.create-bar-input {
+    width: 100%;
+}
+.submit-button{
+    margin-top: 10px;
+    background-color:#1789FC;
+    border: none;
+    color: white;
+    padding: 2px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 10px;
+    width:60px;
+}
+
+.submit-button.reset-button{
+    margin-left: 10px;
+}
+@media screen and (min-width: 600px) {}

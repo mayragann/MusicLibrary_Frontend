@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./CreateSong.css"
 
 const CreateSong = (props) => {
     const [title, setTitle] = useState(0)
@@ -24,27 +25,27 @@ const CreateSong = (props) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div>
+            <div >
                 <label>Title: </label>
-                <input type='text' onChange={(event) => setTitle(event.target.value)} />
+                <input className='create-bar-input' type='text' onChange={(event) => setTitle(event.target.value)} />
             </div>
             <div>
                 <label>Artist: </label>
-                <input type='text' onChange={(event) => setArtist(event.target.value)} />
+                <input className='create-bar-input' type='text' onChange={(event) => setArtist(event.target.value)} />
             </div>
             <div>
                 <label>Album: </label>
-                <input type='text' onChange={(event) => setAlbum(event.target.value)} />
+                <input className='create-bar-input' type='text' onChange={(event) => setAlbum(event.target.value)} />
             </div>
             <div>
                 <label>Release Date: </label>
-                <input type='date' onChange={(event) => setReleaseDate(event.target.value)} />
+                <input className='create-bar-input' type='date' onChange={(event) => setReleaseDate(event.target.value)} />
             </div>
             <div>
                 <label>Genre: </label>
-                <input type='text' onChange={(event) => setGenre(event.target.value)} />
+                <input className='create-bar-input' type='text' onChange={(event) => setGenre(event.target.value)} />
             </div>
-            <button>Create</button><button type='reset'>Reset</button>
+            <button className='submit-button'>Create</button><button  className='submit-button reset-button' type='reset'>Reset</button>
         </form>
     );
 

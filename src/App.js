@@ -35,7 +35,7 @@ function App() {
       </div>
       <div className='body-container'>
       <DisplayMusic parentSongs={songs}/></div>
-      <div className='body-container'>
+      <div className='body-container container'>
       <CreateSong createNewSong={createSong}/></div>
       </div>
     </div>
