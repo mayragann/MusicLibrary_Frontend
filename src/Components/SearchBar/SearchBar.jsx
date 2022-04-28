@@ -10,7 +10,7 @@ const SearchBar = (props) => {
       || song.genre.includes(songSearch) || song.release_date.includes(songSearch)){ 
         return true;
       }
-    });
+  });
     console.log(response)
     props.setSongs(response);
   }

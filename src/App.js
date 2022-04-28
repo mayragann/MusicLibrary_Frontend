@@ -4,6 +4,7 @@ import axios from 'axios';
 import Navbar from './Components/NavBar/NavBar';
 import CreateSong from './Components/CreateSong/CreateSong';
 import SearchBar from './Components/SearchBar/SearchBar';
+import "./App.css"
 
 
 
@@ -27,10 +28,16 @@ function App() {
   }
   return (
     <div>
+      <div className='body-background-color'>
       <Navbar />
+      <div className='body-container'>
       <SearchBar songs={songs} setSongs={setSongs}/>
-      <DisplayMusic parentSongs={songs}/>
-      <CreateSong createNewSong={createSong}/>
+      </div>
+      <div className='body-container'>
+      <DisplayMusic parentSongs={songs}/></div>
+      <div className='body-container'>
+      <CreateSong createNewSong={createSong}/></div>
+      </div>
     </div>
   );
 }
