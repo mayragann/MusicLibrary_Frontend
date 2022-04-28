@@ -3,6 +3,9 @@ import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 import axios from 'axios';
 import Navbar from './Components/NavBar/NavBar';
 import CreateSong from './Components/CreateSong/CreateSong';
+import SearchBar from './Components/SearchBar/SearchBar';
+
+
 
 
 
@@ -25,6 +28,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <SearchBar songs={songs} setSongs={setSongs}/>
       <DisplayMusic parentSongs={songs}/>
       <CreateSong createNewSong={createSong}/>
     </div>
