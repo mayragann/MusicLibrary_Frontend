@@ -26,7 +26,12 @@ function App() {
       await getAllSongs();
     }
   }
-
+  async function deleteSong(newSong){
+    let response = await axios.post(`${URL}${newSong.id}/`, null)
+    if (response.status === 204){
+      await getAllSongs();
+    }
+  }
   
   return (
     <div>
