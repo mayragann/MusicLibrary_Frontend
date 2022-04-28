@@ -1,3 +1,4 @@
+import LikeButton from "../LikeButton/LikeButton";
 import "./DisplayMusic.css"
 
 const DisplayMusic = (props) => {
@@ -27,6 +28,7 @@ const DisplayMusic = (props) => {
                             <td>{song.release_date}</td>
                             <td>{song.genre}</td>
                             <td>{song.likes}</td>
+
                         </tr>
                     );
                     })}

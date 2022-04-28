@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import "./SearchBar.css"
 
 const SearchBar = (props) => {
-  const [songSearch, setSongSearch, ] = useState("");
+  const [songSearch, setSongSearch] = useState("");
 
   function searchResults(event) {
     event.preventDefault();
+    const lowerCaseSongSearch = songSearch.toLowerCase();
+    const searchCols = ['album', 'artist', 'title', 'genre', 'release_date'];
     let response = props.songs.filter((song) => {
-      if (song.album.includes(songSearch) || song.artist.includes(songSearch) || song.title.includes(songSearch) 
-      || song.genre.includes(songSearch) || song.release_date.includes(songSearch)){ 
+
+      if (
+        searchCols.some(element => song[element]            
+          .toLowerCase()          
+          .includes(lowerCaseSongSearch)
+        )
+      ) {                      
         return true;
       }
   });
@@ -18,7 +25,6 @@ const SearchBar = (props) => {
 
   return (
     <div >
-
       <form onSubmit={searchResults}>
         <div>
           <input className="search-bar-input"
@@ -33,5 +39,4 @@ const SearchBar = (props) => {
     </div>
   );
 };
-
 export default SearchBar;

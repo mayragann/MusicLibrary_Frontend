@@ -12,20 +12,22 @@ import "./App.css"
 
 function App() {
   const [songs, setSongs] = useState ([])
-  const baseURL = 'http://127.0.0.1:8000/music/'
+  const URL = 'http://127.0.0.1:8000/music/'
   useEffect(() => {
     getAllSongs();
   }, []); 
   async function getAllSongs(){
-    let response = await axios.get(`${baseURL}`)
+    let response = await axios.get(`${URL}`)
     setSongs(response.data)
   }
   async function createSong(newSong){
-    let response = await axios.post(`${baseURL}`, newSong)
+    let response = await axios.post(`${URL}`, newSong)
     if(response.status === 201){
       await getAllSongs();
     }
   }
+
+  
   return (
     <div>
       <div className='body-background-color'>
